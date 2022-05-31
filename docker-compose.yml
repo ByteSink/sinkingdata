@@ -18,5 +18,3 @@ services:
     restart: unless-stopped
 volumes:
   vsc:
-persistentVolume:
-  enabled: true
