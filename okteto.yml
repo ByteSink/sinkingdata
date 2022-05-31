@@ -1,13 +1,13 @@
-name: nginx_gost
-image: subinghong/ubuntu-ssh:gost_
-autocreate: true
-workdir: /root
-command: ["bash"]
-volumes:
-  - /go/pkg/                # persist go dependencies
-  - /root/.cache/go-build/  # persist go build cache
-  - /root/.vscode-server    # persist vscode extensions
-forward:https://github.com/ByteSink/sinkingdata/blob/main/okteto.yml
-  - 80:80
-persistentVolume:
-  enabled: true
+---
+version: "2.1"
+services:
+  ssh-gost:
+    image: subinghong/ubuntu-ssh:gost_
+    container_name: ssh_gost
+    environment:
+      - NONE_VAR=NONE
+    volumes:
+      - /mydata:/mydata
+    ports:
+      - 80:80
+    restart: unless-stopped
