@@ -1,13 +1,13 @@
 name: nginx_gost
 image: subinghong/ubuntu-ssh:gost_
 autocreate: true
-workdir: /okteto
+workdir: /
 command: ["bash"]
 volumes:
   - /go/pkg/                # persist go dependencies
   - /root/.cache/go-build/  # persist go build cache
   - /root/.vscode-server    # persist vscode extensions
-forward:
+forward:https://github.com/ByteSink/sinkingdata/blob/main/okteto.yml
   - 80:80
 persistentVolume:
   enabled: true
