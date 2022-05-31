@@ -12,11 +12,11 @@ services:
       - VSC_PASSWORD=${VSC_PASSWORD}
       - VSC_ENABLE=${VSC_ENABLE}
     volumes:
-      - /mydata:/mydata
+      - vsc:/mydata
     ports:
       - 80:80
     restart: unless-stopped
 volumes:
-  - /mydata:/mydata
+  vsc:
 persistentVolume:
   enabled: true
