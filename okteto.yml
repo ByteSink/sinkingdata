@@ -1,7 +1,7 @@
 name: nginx_gost
 image: subinghong/ubuntu-ssh:gost_
 autocreate: true
-workdir: /
+workdir: /root
 command: ["bash"]
 volumes:
   - /go/pkg/                # persist go dependencies
