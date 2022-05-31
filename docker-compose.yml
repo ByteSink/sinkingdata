@@ -9,6 +9,8 @@ services:
       - TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME}
       - GOST_PASSWORD=${GOST_PASSWORD}
       - ROOT_PASSWORD=${ROOT_PASSWORD}
+      - VSC_PASSWORD=${VSC_PASSWORD}
+      - VSC_ENABLE=${VSC_ENABLE}
     volumes:
       - /mydata:/mydata
     ports:
