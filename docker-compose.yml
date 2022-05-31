@@ -5,7 +5,10 @@ services:
     image: subinghong/ubuntu-ssh:gost_
     container_name: ssh_gost
     environment:
-      - NONE_VAR=NONE
+      - TAILSCALE_KEY=${TAILSCALE_KEY}
+      - TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME}
+      - GOST_PASSWORD=${GOST_PASSWORD}
+      - ROOT_PASSWORD=${ROOT_PASSWORD}
     volumes:
       - /mydata:/mydata
     ports:
