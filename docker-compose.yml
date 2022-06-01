@@ -2,8 +2,8 @@
 version: "1.0"
 services:
   ssh-gost:
-    image: subinghong/ubuntu-ssh:gost_
-    container_name: ssh_gost
+    image: "${IMAGE_PATH}"
+    container_name: ssh-gost
     environment:
       - TAILSCALE_KEY=${TAILSCALE_KEY}
       - TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME}
@@ -18,3 +18,6 @@ services:
     restart: unless-stopped
 volumes:
   vsc:
+    driver_opts:
+      class: standard
+      size: 5Gi
